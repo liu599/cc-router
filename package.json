@@ -6,6 +6,7 @@
     "start": "node dist/cli.js start",
     "restart": "node dist/cli.js restart",
     "stop": "node dist/cli.js stop",
+    "switch:test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/toggle-router-model.ps1",
     "build": "node scripts/build.js",
     "build:core": "node scripts/build-core.js",
     "build:shared": "node scripts/build-shared.js",

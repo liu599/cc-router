@@ -46,6 +46,19 @@ Restart an already running router:
 npm run restart
 ```
 
+Toggle between GLM 5.2 and MiniMax M3, restart CCR, send a minimal request, and keep the new model only if the request succeeds:
+
+```powershell
+npm run switch:test
+```
+
+Force a specific target:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/toggle-router-model.ps1 -Target glm5.2
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/toggle-router-model.ps1 -Target minimax-m3
+```
+
 ## Notes
 
 This repository contains the runnable published package files, not the full upstream monorepo source tree. The published package does not include the original TypeScript workspace sources.
