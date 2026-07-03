@@ -1,0 +1,68 @@
+{
+  "LOG": true,
+  "LOG_LEVEL": "debug",
+  "CLAUDE_PATH": "",
+  "HOST": "127.0.0.1",
+  "PORT": 3456,
+  "APIKEY": "",
+  "API_TIMEOUT_MS": "600000",
+  "PROXY_URL": "http://127.0.0.1:10811",
+  "transformers": [
+    {
+      "path": "C:/Users/YOUR_USER/.claude-code-router/transformers/nvidia-glm-cleanup.js"
+    }
+  ],
+  "Providers": [
+    {
+      "name": "nvidia-glm",
+      "api_base_url": "https://integrate.api.nvidia.com/v1/chat/completions",
+      "api_key": "YOUR_NVIDIA_API_KEY",
+      "models": [
+        "z-ai/glm-5.2",
+        "qwen/qwen3.5-397b-a17b",
+        "minimaxai/minimax-m3",
+        "minimaxai/minimax-m2.7",
+        "stepfun-ai/step-3.5-flash",
+        "stepfun-ai/step-3.7-flash",
+        "qwen/qwen3.5-122b-a10b",
+        "moonshotai/kimi-k2.6",
+        "deepseek-ai/deepseek-v4-pro",
+        "deepseek-ai/deepseek-v4-flash",
+        "qwen/qwen3-next-80b-a3b-instruct"
+      ],
+      "transformer": {
+        "use": [
+          "openai",
+          "nvidia-glm-cleanup"
+        ]
+      }
+    },
+    {
+      "name": "google-gemini",
+      "api_base_url": "https://generativelanguage.googleapis.com/v1beta/models/",
+      "api_key": "YOUR_GEMINI_API_KEY",
+      "models": [
+        "gemini-3-flash-preview",
+        "gemini-2.5-pro",
+        "gemini-3.1-flash-lite-preview",
+        "gemini-3.5-flash",
+        "gemini-3.1-flash-lite"
+      ],
+      "transformer": {
+        "use": [
+          "gemini"
+        ]
+      }
+    }
+  ],
+  "Router": {
+    "default": "nvidia-glm,z-ai/glm-5.2",
+    "background": "nvidia-glm,z-ai/glm-5.2",
+    "think": "nvidia-glm,z-ai/glm-5.2",
+    "longContext": "nvidia-glm,z-ai/glm-5.2",
+    "longContextThreshold": 100000,
+    "webSearch": "nvidia-glm,z-ai/glm-5.2",
+    "image": "nvidia-glm,z-ai/glm-5.2"
+  },
+  "CUSTOM_ROUTER_PATH": ""
+}

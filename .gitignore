@@ -1,0 +1,9 @@
+config.json
+config.json.*.bak
+.claude-code-router.pid
+logs/
+plugins/
+node_modules/
+.env
+.env.*
+
